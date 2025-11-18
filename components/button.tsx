@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { Route } from "next";
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
@@ -8,7 +9,7 @@ type ButtonVariant = "primary" | "ghost";
 
 type ButtonProps = {
   children: ReactNode;
-  href?: string;
+  href?: Route;
   type?: "button" | "submit" | "reset";
   variant?: ButtonVariant;
   className?: string;
