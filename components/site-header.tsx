@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { Route } from "next";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Container } from "@/components/container";
@@ -9,7 +10,7 @@ import { Button } from "@/components/button";
 
 type NavItem = {
   label: string;
-  href: string;
+  href: Route;
 };
 
 const navItems: NavItem[] = [
@@ -48,7 +49,7 @@ export function SiteHeader() {
       <Container className="flex h-16 items-center justify-between gap-4 sm:h-20">
         <div className="flex items-center gap-2 sm:gap-3">
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-400 to-cyan-400 text-slate-950 shadow-lg shadow-sky-500/40">
+            <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-linear-to-br from-sky-400 to-cyan-400 text-slate-950 shadow-lg shadow-sky-500/40">
               <span className="text-sm font-black leading-none tracking-tight">
                 DF
               </span>
@@ -102,19 +103,19 @@ export function SiteHeader() {
           <div className="flex h-4 w-4 flex-col justify-between">
             <span
               className={cn(
-                "h-[2px] w-full rounded bg-current transition",
+                "h-0.5 w-full rounded bg-current transition",
                 open && "translate-y-[7px] rotate-45"
               )}
             />
             <span
               className={cn(
-                "h-[2px] w-full rounded bg-current transition",
+                "h-0.5 w-full rounded bg-current transition",
                 open && "opacity-0"
               )}
             />
             <span
               className={cn(
-                "h-[2px] w-full rounded bg-current transition",
+                "h-0.5 w-full rounded bg-current transition",
                 open && "-translate-y-[7px] -rotate-45"
               )}
             />
