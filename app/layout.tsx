@@ -3,6 +3,7 @@ import "./globals.css";
 import { ReactNode } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://digitalflaeche.at"),
@@ -36,7 +37,8 @@ export const metadata: Metadata = {
 export default function RootLayout(props: { children: ReactNode }) {
   return (
     <html lang="de">
-      <body className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-slate-950">
+      <body className="min-h-screen bg-linear-to-b from-slate-950 via-slate-950 to-slate-950">
+        <Analytics />
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
           <main className="flex-1">{props.children}</main>
